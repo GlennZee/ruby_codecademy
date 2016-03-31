@@ -1,7 +1,7 @@
-movies = {:Gladiator => 4,
-            :Big => 4,
-            :Ishtar => 0,
-            :Plenty => 1
+movies = {:gladiator => 4,
+            :big => 4,
+            :ishtar => 0,
+            :plenty => 1
 }
 puts "What would you like to do?"
 puts "-- Type 'add' to add a movie."
@@ -16,9 +16,10 @@ case choice
         title = gets.chomp
                      
         if movies[title.to_sym].nil?
-            movies[title.to_sym] = rating.to_i     
+            title = title.downcase
             puts "Enter a rating from 0 to 4 for " + "#{title}" +"."
             rating = gets.chomp
+            movies[title.to_sym] = rating.to_i 
             puts "#{title}" +" has been added with a rating of " + "#{rating}"
         else
             puts "#{title}" +" is already in the list!"
