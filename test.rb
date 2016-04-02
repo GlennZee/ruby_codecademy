@@ -1,13 +1,13 @@
-class Message
-   
-    @@messages_sent  = 0
-    
-    def initialize (from, to)
-        @from = from
-        @to = to
-        @@messages_sent += 1
-    end
-    end
-    
-    my_message = Message.new("Fred", "Mary")
-    puts my_message 
+class Account
+  attr_reader :name, :balance
+  def initialize(name, balance=100)
+    @name = name
+    @balance = balance
+  end
+end
+
+x = Account.new("steve",100)
+puts x.name
+puts x.balance
+
+
